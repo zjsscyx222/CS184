@@ -7,22 +7,14 @@ import numpy as np
 
 
 
-def fix_all_seeds(seed):
-    np.random.seed(seed)
-    random.seed(seed)
-    os.environ['PYTHONHASHSEED'] = str(seed)
-    torch.manual_seed(seed)
-    torch.cuda.manual_seed(seed)
-    torch.cuda.manual_seed_all(seed)
 
 
-fix_all_seeds(2021)
 
 # Configuration
 
-TRAIN_CSV = "E:/大四/CS184/input/sartorius-cell-instance-segmentation/train.csv"
-TRAIN_PATH = "E:/大四/CS184/input/sartorius-cell-instance-segmentation/train"
-TEST_PATH = "E:/大四/CS184/input/sartorius-cell-instance-segmentation/test"
+TRAIN_CSV = "E:/大四/CS184/sartorius-cell-instance-segmentation/train.csv"
+TRAIN_PATH = "E:/大四/CS184/sartorius-cell-instance-segmentation/train"
+TEST_PATH = "E:/大四/CS184/sartorius-cell-instance-segmentation/test"
 
 WIDTH = 704
 HEIGHT = 520
@@ -61,3 +53,4 @@ BOX_DETECTIONS_PER_IMG = 539
 
 
 MIN_SCORE = 0.59
+
