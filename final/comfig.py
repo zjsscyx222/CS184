@@ -8,13 +8,11 @@ import numpy as np
 
 
 
-
-
 # Configuration
 
-TRAIN_CSV = "E:/大四/CS184/sartorius-cell-instance-segmentation/train.csv"
-TRAIN_PATH = "E:/大四/CS184/sartorius-cell-instance-segmentation/train"
-TEST_PATH = "E:/大四/CS184/sartorius-cell-instance-segmentation/test"
+TRAIN_CSV = "D:/CS18444/sartorius-cell-instance-segmentation/train.csv"
+TRAIN_PATH = "D:/CS18444/sartorius-cell-instance-segmentation/train"
+TEST_PATH = "D:/CS18444/sartorius-cell-instance-segmentation/test"
 
 WIDTH = 704
 HEIGHT = 520
@@ -23,11 +21,12 @@ HEIGHT = 520
 TEST = False
 
 DEVICE = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
+DEVICE = torch.device('cpu')
 
 RESNET_MEAN = (0.485, 0.456, 0.406)
 RESNET_STD = (0.229, 0.224, 0.225)
 
-BATCH_SIZE = 2
+BATCH_SIZE = 5
 
 # No changes tried with the optimizer yet.
 MOMENTUM = 0.9

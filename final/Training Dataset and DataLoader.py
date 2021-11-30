@@ -1,8 +1,14 @@
 import time
+
+from torch import autocast
+
 from comfig import *
 from Model import model
 from training import dl_train
 
+import gc
+gc.collect()
+torch.cuda.empty_cache()
 
 if __name__ == '__main__':
     params = [p for p in model.parameters() if p.requires_grad]
@@ -15,37 +21,40 @@ if __name__ == '__main__':
     for epoch in range(1, NUM_EPOCHS + 1):
         print(f"Starting epoch {epoch} of {NUM_EPOCHS}")
 
-    time_start = time.time()
-    loss_accum = 0.0
-    loss_mask_accum = 0.0
+        time_start = time.time()
+        loss_accum = 0.0
+        loss_mask_accum = 0.0
 
-    for batch_idx, (images, targets) in enumerate(dl_train, 1):
+        for batch_idx, (images, targets) in enumerate(dl_train, 1):
 
-        # Predict
-        images = list(image.to(DEVICE) for image in images)
-        targets = [{k: v.to(DEVICE) for k, v in t.items()} for t in targets]
+            # Predict
+            with autocast('cuda'):
+                images = list(image.to(DEVICE) for image in images)
+                targets = [{k: v.to(DEVICE) for k, v in t.items()} for t in targets]
 
-        loss_dict = model(images, targets)
-        loss = sum(loss for loss in loss_dict.values())
+                loss_dict = model(images, targets)
+                loss = sum(loss for loss in loss_dict.values())
 
-        # Backprop
-        optimizer.zero_grad()
-        loss.backward()
-        optimizer.step()
+            # Backprop
+            loss.backward()
+            if (batch_idx+1) % 2 == 0 or (batch_idx+1) == len(images):
+                optimizer.step()
+                optimizer.zero_grad()
 
-        # Logging
-        loss_mask = loss_dict['loss_mask'].item()
-        loss_accum += loss.item()
-        loss_mask_accum += loss_mask
+            # Logging
+            loss_mask = loss_dict['loss_mask'].item()
+            loss_accum += loss.item()
+            loss_mask_accum += loss_mask
 
-        if batch_idx % 50 == 0:
-            print(
-                f"    [Batch {batch_idx:3d} / {n_batches:3d}] Batch train loss: {loss.item():7.3f}. Mask-only loss: {loss_mask:7.3f}")
+            if batch_idx % 50 == 0:
+                pass
+            if True:
+                print(f"    [Batch {batch_idx:3d} / {n_batches:3d}] Batch train loss: {loss.item():7.3f}. Mask-only loss: {loss_mask:7.3f}")
 
         if USE_SCHEDULER:
             lr_scheduler.step()
 
-    # Train losses
+        # Train losses
         train_loss = loss_accum / n_batches
         train_loss_mask = loss_mask_accum / n_batches
 

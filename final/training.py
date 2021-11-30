@@ -180,8 +180,10 @@ class CellDataset(Dataset):
     def __len__(self):
         return len(self.image_info)
 
+def f(x):
+    return tuple(zip(*x))
 
 df_train = pd.read_csv(TRAIN_CSV, nrows=5000 if TEST else None)
 ds_train = CellDataset(TRAIN_PATH, df_train, resize=False, transforms=get_transform(train=True))
 dl_train = DataLoader(ds_train, batch_size=BATCH_SIZE, shuffle=True,
-                      num_workers=2, collate_fn=lambda x: tuple(zip(*x)))
+                      num_workers=2, collate_fn=f)
