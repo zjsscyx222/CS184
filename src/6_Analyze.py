@@ -1,8 +1,8 @@
 # Plots: the image, The image + the ground truth mask, The image + the predicted mask
 import matplotlib.pyplot as plt
-from 4_Model import get_model
-from 2_Configuration import *
-from 3_Preprocess import ds_train
+from src.4_Model import get_model
+from src.2_Configuration import *
+from src.3_Preprocess import ds_train
 
 
 def analyze_train_sample(model, ds_train, sample_index):
