@@ -20,6 +20,7 @@ TEST = False
 
 DEVICE = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
 DEVICE = torch.device('cpu')
+#tried to use gpu but failed
 
 RESNET_MEAN = (0.485, 0.456, 0.406)
 RESNET_STD = (0.229, 0.224, 0.225)
