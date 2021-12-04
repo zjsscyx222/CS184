@@ -1,21 +1,22 @@
-# CS184
-## final
-This is the folder that contains all codes that we will use for this problem.(Already sorted by run order here)
-#### import111.py
-This is the file that contains all the basic imports within the whole process and fix the random inorder to replicate the same result by rerunning the code after many times.
-#### comfig.py 
-This is the file that loads data and set the fundemental variables(like thresholds, number of epochs) for training and testing later.
-#### training.py
+# CS184 Final Project
+A Mask R-CNN model applied in `Sartorius - Cell Instance Segmentation` Kaggle competition. Reference: https://www.kaggle.com/julian3833/sartorius-starter-torch-mask-r-cnn-lb-0-273#Train-loop
+##  `final`:Files Used to Generate Prediction
+
+### `import111.py`
+All the necessary imports  and randomness fixation to replicate the same result after rerunning the code.
+### `comfig.py` 
+Load data and set up the parameters(like thresholds, number of epochs) for training and testing purpose.
+### `training.py`
 This is the file that transforms the dataset and gives annotations as the ground truth.
-#### Model.py
+### `Model.py`
 This is the file that builds the frame of model.
-#### Training Dataset and DataLoader.py
+### `Training Dataset and DataLoader.py`
 This is the training loop code. We will finish and save 8 models from 8 epoch here.
-#### Analyze prediction results for train set.py 
+### `Analyze prediction results for train set.py`
 This is the file that we can see how well the model from  predicts.
-#### test_dataset.py
+### `test_dataset.py`
 This is the file that transforms and normalizes the test data. 
-#### Utilities.py 
+### `Utilities.py` 
 This is the file that we get final submission.
 
 ## project.ipynb
