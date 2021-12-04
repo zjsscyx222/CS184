@@ -1,7 +1,7 @@
 import pandas as pd
 
-from final.src.Model import get_model
-from final.src.comfig import *
+from final.src.4_Model import get_model
+from final.src.2_Configuration import *
 from test_dataset import ds_test
 import torch
 
