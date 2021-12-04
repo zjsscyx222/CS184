@@ -10,7 +10,7 @@ from PIL import Image
 from torchvision.transforms import functional as F
 from torch.utils.data import Dataset, DataLoader
 
-from 2_Configuration import *
+from src.2_Configuration import *
 
 
 class Compose:
