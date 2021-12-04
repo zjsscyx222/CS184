@@ -1,5 +1,3 @@
-
-# Fix randomness
 import os
 import torch
 import random
