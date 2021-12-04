@@ -3,7 +3,7 @@ import os
 from PIL import Image
 from torch.utils.data import Dataset
 
-from final.src.2_Configuration import TEST_PATH
+from 2_Configuration import TEST_PATH
 from 3_Preprocess import get_transform
 
 
