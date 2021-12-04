@@ -23,7 +23,7 @@ Final prediction on the test data and final submission.
 #### project.ipynb
 A jupyter notebook that use the trained model to generate predictions on a sample of the data and the test data, including the loss curve.
 #### project.html
-A .html file that contains both codes and output of project (1).ipynb.
+A .html file that contains both codes and output of project.ipynb.
 #### train
 A directory that contains a sample image.
 #### train1.csv
