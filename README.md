@@ -16,7 +16,7 @@ The 8-epoch training loop of the model.
 Analysis of prediction on training data.
 #### 7_Testdata.py
 Transformation and normalization of the test data. 
-#### 8_Prediction
+#### 8_Prediction.py
 Final prediction on the test data and final submission.
 
 ## A Jupyter Notebook
