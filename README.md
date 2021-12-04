@@ -1,7 +1,7 @@
 # CS184 Final Project
 A Mask R-CNN model applied in `Sartorius - Cell Instance Segmentation` Kaggle competition. Reference: https://www.kaggle.com/julian3833/sartorius-starter-torch-mask-r-cnn-lb-0-273#Train-loop
 ##  final:
-A directory with all the files used to generate prediction
+### A directory with all the files used to generate prediction
 #### 1_Import.py
 All the necessary imports  and randomness fixation to replicate the same result after rerunning the code.
 #### 2_Configuration.py
