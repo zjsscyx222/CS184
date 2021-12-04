@@ -3,7 +3,7 @@ import torchvision
 
 from torchvision.models.detection.faster_rcnn import FastRCNNPredictor
 from torchvision.models.detection.mask_rcnn import MaskRCNNPredictor
-from comfig import *
+from 2_Configuration import *
 
 def get_model():
     # This is just a dummy value for the classification head
