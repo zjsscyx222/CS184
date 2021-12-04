@@ -5,7 +5,7 @@
 # We only rely on Pytorch
 import os
 import time
-import Configuration
+import 2_Configuration
 import collections
 
 import numpy as np
