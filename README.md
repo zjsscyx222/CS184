@@ -18,10 +18,10 @@ This is the file that transforms and normalizes the test data.
 #### Utilities.py 
 This is the file that we get final submission.
 
-## project (1).ipynb
+## project.ipynb
 This is the jupyter notebook file that can run and quickly show the performance of one of the 8 models.
 
-## project_html.pdf
+## project.html
 This is the file that contains both codes and output of project (1).ipynb.
 
 ## stats.csv
