@@ -22,7 +22,7 @@ This is the file that we get final submission.
 This is the jupyter notebook file that can run and quickly show the performance of one of the 8 models.
 
 ## project.html
-This is the file that contains both codes and output of project (1).ipynb.
+This is the file that contains both codes and output of project.ipynb.
 
 ## stats.csv
 This is the file that collects loss value during each batch in each epoch when we are in the training loop.
