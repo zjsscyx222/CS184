@@ -3,8 +3,8 @@ import os
 from PIL import Image
 from torch.utils.data import Dataset
 
-from 2_Configuration import TEST_PATH
-from 3_Preprocess import get_transform
+from src.2_Configuration import TEST_PATH
+from src.3_Preprocess import get_transform
 
 
 class CellTestDataset(Dataset):
