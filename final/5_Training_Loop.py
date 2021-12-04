@@ -3,9 +3,9 @@ import time
 
 from torch import autocast
 
-from final.src.comfig import *
-from final.src.Model import model
-from training import dl_train
+from final.src.2_Configuration import *
+from final.src.4_Model import model
+from 3_Preprocess import dl_train
 
 import gc
 gc.collect()
