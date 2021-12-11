@@ -25,7 +25,9 @@ A jupyter notebook that use the trained model to generate predictions on a sampl
 #### project.html
 A .html file that contains both codes and output of project.ipynb.
 #### train
-A directory that contains a sample image.
+A directory that contains a sample train image.
+#### test
+A directory that contains a sample test image.
 #### train1.csv
 A .csv file that contains the annotation of the sample data.
 #### stats.csv
